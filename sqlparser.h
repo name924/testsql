@@ -59,8 +59,9 @@ class SQLParser: public QObject
 public:
     Q_INVOKABLE SQLParser();
 
-    Q_INVOKABLE void start_parse();
-    Q_INVOKABLE QString get_item_info();
+    Q_INVOKABLE void start_parse(QString file);
+    Q_INVOKABLE QString downloadDict(QString dictionaryUrl);
+    Q_INVOKABLE QString get_item_info(int i);
 };
 
 #endif // SQLPARSER_H

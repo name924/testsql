@@ -45,7 +45,17 @@ int main(int argc, char *argv[])
     //   - SailfishApp::pathTo(QString) to get a QUrl to a resource file
     //
     // To display the view, call "show()" (will show fullscreen on device).
-    qmlRegisterType <SQLParser> ( "com.saildev.components", 1, 0, "SQLParser");
-    qDebug() << QString::fromStdString(argv[0]);
-    return SailfishApp::main(argc, argv);
+//    qmlRegisterType <SQLParser> ( "com.saildev.components", 1, 0, "SQLParser");
+    QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
+    QScopedPointer<QQuickView> view(SailfishApp::createView());
+    SQLParser sql_parser;
+    view.data()->rootContext()->setContextProperty("sql_parser", &sql_parser);
+//    qDebug() << QString::fromStdString(argv[0]);
+//    return SailfishApp::main(argc, argv);
+    QUrl qmlPath(SailfishApp::pathTo("qml/TestSQL.qml"));
+    view.data()->setSource(qmlPath);
+
+    view.data()->show();
+
+    return app->exec();
 }

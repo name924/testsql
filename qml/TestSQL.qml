@@ -36,7 +36,7 @@ import "service"
 ApplicationWindow
 {
     Dao {id: dao}
-    initialPage: Component { FirstPage { } }
+    initialPage: Component { SearchPage { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
     allowedOrientations: defaultAllowedOrientations
 }

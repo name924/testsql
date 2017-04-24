@@ -46,7 +46,15 @@ DISTFILES += \
     icons/128x128/TestSQL.png \
     icons/256x256/TestSQL.png \
     icons/86x86/TestSQL.png \
-    qml/service/Dao.qml
+    qml/service/Dao.qml \
+    qml/pages/SearchPage.qml \
+    qml/model/EntryListModel.qml \
+    qml/pages/showEntry.qml \
+    qml/model/TranslationListModel.qml \
+    qml/delegates/DictDelegate.qml \
+    qml/pages/DownloadPage.qml \
+    qml/pages/DictDownloadDetails.qml \
+    qml/pages/DictDelegate.qml
 
 HEADERS += \
     sqlparser.h

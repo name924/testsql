@@ -9,17 +9,6 @@
     </message>
 </context>
 <context>
-    <name>Dao</name>
-    <message>
-        <source>Test string 1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Test string 2</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>SecondPage</name>
     <message>
         <source>Nested Page</source>

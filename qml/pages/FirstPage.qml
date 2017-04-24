@@ -30,7 +30,7 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import com.saildev.components 1.0
+//import com.saildev.components 1.0
 
 import "../service"
 import "../model"
@@ -38,9 +38,9 @@ import "../model"
 Page {
     id: page
 
-    SQLParser {
-        id: sql_parser
-    }
+//    SQLParser {
+//        id: sql_parser
+//    }
 
     Label {
         id: ifNoEntries
@@ -88,7 +88,7 @@ Page {
 */
             SilicaListView {
                 id: listView
-                model: TestListModel { id: testListModel }
+                model: EntryListModel { id: testListModel }
                 width: parent.width
                 VerticalScrollDecorator {}
                 height: parent.height
@@ -115,14 +115,14 @@ Page {
     }
 
     function displayTestEntries() {
-        listView.model.clear();
+        testListModel.clear();
         dao.retrieveTextEntries(function(testEntries) {
             ifNoEntries.text = "";
             if(testEntries.length !== 0) {
                 for (var i = 0; i < testEntries.length; i++) {
                     var testEntry = testEntries.item(i);
 
-                    listView.model.addTestEntry(testEntry.id, testEntry.datatxt);
+                    testListModel.addDictEntry(testEntry.word, testEntry.dict);
                 }
             } else {
                 ifNoEntries.text = "You don't have any actual entries right now";
